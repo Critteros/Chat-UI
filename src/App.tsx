@@ -12,7 +12,6 @@ import {
   AlertDialogTrigger,
 } from '@/components/AlertDialog';
 import { Button } from '@/components/Button';
-import { Calendar } from '@/components/Calendar';
 
 function App() {
   return (
@@ -35,7 +34,6 @@ function App() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-      <Calendar mode="single" className="rounded-md border shadow" />
     </main>
   );
 }
