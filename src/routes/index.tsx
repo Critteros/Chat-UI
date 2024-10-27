@@ -1,4 +1,4 @@
-import './globals.css';
+import { createFileRoute } from '@tanstack/react-router';
 
 import {
   AlertDialog,
@@ -13,7 +13,11 @@ import {
 } from '@/components/AlertDialog';
 import { Button } from '@/components/Button';
 
-function App() {
+export const Route = createFileRoute('/')({
+  component: Index,
+});
+
+function Index() {
   return (
     <main className="container">
       <AlertDialog>
@@ -37,5 +41,3 @@ function App() {
     </main>
   );
 }
-
-export default App;

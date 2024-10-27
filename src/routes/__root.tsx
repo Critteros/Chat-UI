@@ -1,8 +1,15 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+
+import { Devtools } from '@/modules/Devtools';
+
+import '../globals.css';
 
 export const Route = createRootRoute({
-  component: () => (
+  component: Root,
+});
+
+function Root() {
+  return (
     <>
       <div className="flex gap-2 p-2">
         <Link to="/" className="[&.active]:font-bold">
@@ -11,10 +18,11 @@ export const Route = createRootRoute({
         <Link to="/about" className="[&.active]:font-bold">
           About
         </Link>
+        <p>IS DEV: {JSON.stringify(import.meta.env.DEV)}</p>
       </div>
       <hr />
       <Outlet />
-      <TanStackRouterDevtools />
+      <Devtools />
     </>
-  ),
-});
+  );
+}
